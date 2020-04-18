@@ -1,0 +1,26 @@
+https://www.cnblogs.com/taohuaya/p/10686420.html
+
+1、.vue 文件的基本结构是：
+<template>
+       ........
+</template>
+
+<script>
+    export default {
+        name: "demo"
+    }
+</script>
+
+<style scoped>
+    .demo {
+          font-size: 28px;
+    }
+</style>
+
+@HTML5中<template>标签
+2、template标签是用来写 html 模板的，且内部必须只有一个根元素，像这样（不然报错）：
+<template>
+    <div class="demo">
+        .....
+    </div>
+</template>
