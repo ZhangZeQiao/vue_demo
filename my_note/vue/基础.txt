@@ -1,5 +1,7 @@
 https://www.cnblogs.com/taohuaya/p/10686420.html
 
+<!-- TODO: Vue CLI: https://cli.vuejs.org/zh/guide/ -->
+
 1、.vue 文件的基本结构是：
 <template>
        ........

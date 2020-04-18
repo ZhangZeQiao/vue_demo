@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="w|idth=device-width,initial-scale=1.0">
+  <meta http-equiv="X_UA_Compatible" content="ie=edge">
+  <title>Demo</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="app-1">
+    <p>1、数据绑定</p>
+    <span v-bind:title="message">
+      鼠标悬停几秒钟查看此处动态绑定的提示信息！
+    </span>
+  </div>
+  <div id="app-2">
+    <p>2、条件判断</p>
+    <p v-if="seen">现在你看到我了</p>
+  </div>
+  <div id="app-3">
+    <p>3、for循环</p>
+    <ol>
+      <li v-for="todo in todos">
+        {{ todo.text }}
+      </li>
+    </ol>
+  </div>
+  <div id="app-4">
+    <p>4、事件监听器</p>
+    <p>{{ message }}</p>
+    <button v-on:click="reverseMessage">反转消息</button>
+  </div>
+  <div id="app-5">
+    <p>5、表单输入和应用状态之间的双向绑定</p>
+    <p>{{ message }}</p>
+    <input v-model="message">
+  </div>
+
+  <script>
+    let app1 = new Vue({
+      el: '#app-1',
+      data: {
+        message: '页面加载于 ' + new Date().toLocaleString(), // 在浏览器控制台输入 app1.message = '新消息' 就能修改
+      }
+    });
+    let app2 = new Vue({
+      el: '#app-2',
+      data: {
+        seen: true, // 在浏览器控制台输入 app2.seen = false 就能修改
+      }
+    });
+    let app3 = new Vue({
+      el: '#app-3',
+      data: {
+        todos: [
+          { text: '学习 JavaScript' },
+          { text: '学习 Vue' },
+          { text: '整个牛项目' }
+        ]
+      }
+    });
+    let app4 = new Vue({
+      el: '#app-4',
+      data: { // TODO: 数据
+        message: 'Hello Vue.js!'
+      },
+      methods: { // TODO: 方法
+        /* 注意在 reverseMessage 方法中，我们更新了应用的状态，但没有触碰 DOM——所有的 DOM 操作都由 Vue 来处理，你编写的代码只需要关注逻辑层面即可。 */
+        reverseMessage: function () {
+          this.message = this.message.split('').reverse().join('')
+        }
+      }
+    });
+    let app5 = new Vue({
+      el: '#app-5',
+      data: {
+        message: 'Hello Vue!'
+      }
+    });
+  </script>
+
+</body>
+
+</html>

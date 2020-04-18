@@ -1,3 +1,4 @@
+<!-- Vue CLI: https://cli.vuejs.org/zh/guide/ -->
 <template>
   <div id="app">
     <!-- <img src="./assets/logo.png"> -->
