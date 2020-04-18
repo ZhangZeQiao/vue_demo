@@ -1,15 +1,31 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
+import Hi from '../components/demo/Hi'
 
 Vue.use(Router)
 
 export default new Router({
+
+  // mode: 'history',  // 这行的作用是去掉地址栏中的#
+  /*
+  上面的 mode: 'history' 是去掉地址栏中的#。
+  但是在项目的正式部署环境下刷新浏览器会报404的错误，解决此问题需要在 nginx 中添加如下的配置（React项目也需要做同样的配置）：
+  location / {
+    try_files $uri $uri/ /index.html;
+  }
+  */
+
   routes: [
-    {
+    /* {
       path: '/',
       name: 'HelloWorld',
       component: HelloWorld
+    } */
+    {
+      path: '/',
+      name: 'Hi',
+      component: Hi
     }
   ]
 })

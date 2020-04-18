@@ -1,0 +1,6 @@
+https://blog.csdn.net/bowei026/article/details/91355251
+
+1、创建页面
+创建一个页面包括：新建路由、新建vue页面
+① 打开 src\router\index.js 文件进行路由编辑
+② 在 src\components 目录下新建Hi.vue 文件

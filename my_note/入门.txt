@@ -1,0 +1,47 @@
+1、依赖：
+npm install vue -g
+npm install vue-cli -g
+npm install webpack -g
+npm install webpack-cli -g
+
+2、初始化项目：vue init webpack project_name
+-------------------------------------------------
+输入以上命令之后，安照提示，输入相应的内容即可。
+-------------------------------------------------
+$ vue init webpack kitty 　　-- 这个是那个安装vue脚手架的命令
+This will install Vue 2.x version of the template. 　　--这里说明将要创建一个vue 2.x版本的项目
+For Vue 1.x use: vue init webpack#1.0 kitty
+? Project name (kitty) 　　--项目名称
+? Project name kitty
+? Project description (kitty project) 　　--项目描述
+? Project description kitty project
+? Author Louis 　　-- 项目创建者
+? Author Louis
+? Vue build (Use arrow keys)
+? Vue build standalone
+? Install vue-router? (Y/n) 　　-- 是否安装Vue路由，也就是以后是spa（但页面应用需要的模块）
+? Install vue-router? Yes
+? Use ESLint to lint your code? (Y/n) n 　　--是否启用eslint检测规则，这里个人建议选no
+? Use ESLint to lint your code? No
+? Setup unit tests with Karma + Mocha? (Y/n)
+? Setup unit tests with Karma + Mocha? Yes
+? Setup e2e tests with Nightwatch? (Y/n)
+? Setup e2e tests with Nightwatch? Yes
+vue-cli · Generated "kitty".
+To get started: 　　-- 这里说明如何启动这个服务
+cd kitty
+npm install
+npm run dev
+-------------------------------------------------
+
+3、启动项目
+npm install
+npm run dev
+-------------------------------------------------
+'webpack-dev-server' 不是内部或外部命令，也不是可运行的程序 或批处理文件。
+前往项目根目录删除node_modules文件夹，然后在项目根目录路径下的终端运行"npm install"等待安装完之后，再次运行“npm run dev”。
+有些人的是马上就可以了，然而往往还会有人仍然报类似的错误，这个时候你只需要再次重复相同的操作即可。
+-------------------------------------------------
+http://localhost:8080【可在 config\index.js 中修改】
+
+4、编译打包：（待续...）
