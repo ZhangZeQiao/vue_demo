@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="w|idth=device-width,initial-scale=1.0">
+  <meta http-equiv="X_UA_Compatible" content="ie=edge">
+  <title>Component</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <ol>
+      <!-- 创建一个 todo-item 组件的实例 -->
+      <!--
+      现在我们为每个 todo-item 提供 todo 对象，todo 对象是变量，即其内容可以是动态的。
+      我们也需要为每个组件提供一个“key”，稍后再作详细解释。
+      -->
+      <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+    </ol>
+  </div>
+
+  <script>
+    // 在一个大型应用中，有必要将整个应用程序划分为组件，以使开发更易管理。
+    // TODO: 这里有一个 (假想的) 例子，以展示使用了组件的应用模板是什么样的：
+    /*
+    <div id="app">
+      <app-nav></app-nav>
+      <app-view>
+        <app-sidebar></app-sidebar>
+        <app-content></app-content>
+      </app-view>
+    </div>
+    */
+    // 定义名为 todo-item 的新组件
+    Vue.component('todo-item', {
+      // todo-item 组件现在接受一个"prop"，类似于一个自定义 attribute。这个 prop 名为 todo。
+      props: ['todo'],
+      template: '<li>{{todo.text}}</li>',
+    });
+
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        groceryList: [
+          { id: 0, text: '蔬菜' },
+          { id: 1, text: '奶酪' },
+          { id: 2, text: '随便其它什么人吃的东西' },
+        ],
+      }
+    });
+  </script>
+
+</body>
+
+</html>
