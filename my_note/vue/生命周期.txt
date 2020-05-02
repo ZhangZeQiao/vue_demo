@@ -1,10 +1,10 @@
 一、vue的生命周期里边有八个生命周期钩子函数分别是：
-new Vue(）===>
+new Vue()===>
 1、beforeCreat() 创建前
-2、created（）创建
-3、beforeMount()挂载前
-4、mounted（）挂载
-5、beforeupdate（）更改前
-6、updated（）更改
-7、beforeDestroy()销毁前
-8、destroyed（）销毁
+2、created() 创建
+3、beforeMount() 挂载前
+4、mounted() 挂载
+5、beforeupdate() 更改前
+6、updated() 更改
+7、beforeDestroy() 销毁前
+8、destroyed() 销毁
