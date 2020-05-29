@@ -1,0 +1,44 @@
+《从零到部署：用 Vue 和 Express 实现迷你全栈电商应用（三） | 图雀社区  https://tuture.co/2019/12/18/5e10a46/》
+
+模板语法：v-on
+
+在 Vue 中，我们通过 v-on 的方式接管了之前在 HTML 中 onEvent ：
+比如之前我们在 HTML 中的写法是这样的：
+<div onclick="alert('I love tuture')">
+Hello Tuture
+</div>
+现在在 Vue 的模板语法中我们需要写出这样：
+<div v-on:click="alert('I love tuture')">
+Hello Tuture
+</div>
+
+类似的 onEvent 都要改成 v-on:Event。然后这样写显得比较冗余，所以 Vue 支持简化写法，用 @ 替换 v-on: 部分，我们就可以写出这样：
+<div @click="alert('I love tuture')">
+Hello Tuture
+</div>
+调用事件之后我们一般有一些这样的操作，比如禁用浏览器默认行为，然后自己去处理事件，获取后端数据，以前我们会这样写：
+<div onclick="saveProduct()">
+Hello Tuture
+
+<script>
+var saveProduct = function (e) {
+  e.preventDefault();
+  // do something you like
+}
+</script>
+但是这样写又显得特别繁琐了，Vue 也觉得这样可以简化，于是我们直接将这些禁止默认行为的调用作为绑定事件的属性来进行处理，于是乎在 Vue 中我们可以写出这样：
+<template>
+  <div @click.prevent="saveProduct">
+  Hello Tuture
+  </div>
+</template>
+
+<script>
+export default {
+  methods: {
+    saveProduct() {
+      // do something you like
+    }
+  }
+}
+</script>
