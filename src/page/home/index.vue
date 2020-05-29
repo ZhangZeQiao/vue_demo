@@ -4,6 +4,7 @@
     <div>
       <router-link :to="{path:'/hi'}">Hi</router-link><!-- TODO: 当前页面打开 -->
       <router-link target="_blank" :to="{name:'Demo'}">Demo</router-link><!-- TODO: 新页面打开 -->
+      <router-link target="_blank" :to="{name:'little-store-home'}">little-store-home</router-link><!-- TODO: 新页面打开 -->
     </div>
   </div>
 </template>
