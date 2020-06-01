@@ -14,6 +14,9 @@
             <li>
               <router-link to="/little-store-admin/new">New Products</router-link>
             </li>
+            <li>
+              <router-link to="/little-store-admin/products">Products</router-link>
+            </li>
           </ul>
         </div>
         <!-- 
