@@ -31,7 +31,9 @@
 export default {
   name: "product-list",
   computed: {
+    // a computed getter
     products() {
+      // TODO: vue-devtools使用：在想断点调试的地方加上 debugger 即可
       return this.$store.state.products;
     }
   },
